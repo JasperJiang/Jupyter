@@ -7,6 +7,6 @@ RUN pip3 install jupyterlab
 
 RUN jupyter notebook --generate-config
 
-ADD jupyter_notebook_config.py ~/.jupyter/jupyter_notebook_config.py
+COPY jupyter_notebook_config.py ~/.jupyter/jupyter_notebook_config.py
 
 ENTRYPOINT ["sh", "-c", "jupyter lab --port 8001 --no-browser --allow-root"]
